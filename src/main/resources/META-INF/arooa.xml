@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<arooa:descriptor namespace="oddjob:cassandra" prefix="cassandra" xmlns:arooa="http://rgordon.co.uk/oddjob/arooa">
+    <components>
+        <arooa:bean-def className="org.oddjob.cassandra.CassandraSessionService" element="session">
+        </arooa:bean-def>
+        <arooa:bean-def className="org.oddjob.cassandra.CqlJob" element="cql">
+            <properties>
+                <arooa:property name="cql" annotation="org.oddjob.arooa.deploy.annotations.ArooaText"/>
+            </properties>
+        </arooa:bean-def>
+    </components>
+</arooa:descriptor>

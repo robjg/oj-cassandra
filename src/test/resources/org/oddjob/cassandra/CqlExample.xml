@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<oddjob>
+    <job>
+        <cascade cascadeOn="FINISHED">
+            <jobs>
+                <cassandra:session id="cassandra" node="localhost" port="9142" xmlns:cassandra="oddjob:cassandra"/>
+                <cassandra:cql name="Create Tablespace" xmlns:cassandra="oddjob:cassandra">
+                    <session>
+                        <value value="${cassandra.session}"/>
+                    </session><![CDATA[create keyspace ojTest  WITH REPLICATION = { 
+   'class' : 'SimpleStrategy', 
+   'replication_factor' : 1 
+  };
+
+]]></cassandra:cql>
+                <cassandra:cql name="Create Table" xmlns:cassandra="oddjob:cassandra">
+                    <session>
+                        <value value="${cassandra.session}"/>
+                    </session><![CDATA[use ojTest;
+
+create table fruit (
+fruit text,
+colour text,
+quantity int,
+ primary key (fruit, colour));
+
+
+]]></cassandra:cql>
+                <cassandra:cql name="Insert Data" xmlns:cassandra="oddjob:cassandra">
+                    <session>
+                        <value value="${cassandra.session}"/>
+                    </session><![CDATA[use ojTest;
+
+insert into fruit (fruit, colour, quantity) 
+values ('apple', 'red', 4);
+
+
+]]></cassandra:cql>
+            </jobs>
+        </cascade>
+    </job>
+</oddjob>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<oddjob>
+    <job>
+        <bean class="org.oddjob.cassandra.CassandraEmbedded">
+            <configFile>
+                <file file="C:\Users\rob\projects\oj-cassandra\src\test\resources\cu-cassandra.yaml"/>
+            </configFile>
+        </bean>
+    </job>
+</oddjob>
