@@ -13,7 +13,7 @@
     <artifactId>oj-cassandra</artifactId>
 
     <properties>
-        <cassandra.server.version>3.11.8</cassandra.server.version>
+        <cassandra.server.version>3.11.10</cassandra.server.version>
         <datastax.cassandra.version>3.10.2</datastax.cassandra.version>
         <cassandraunit.version>3.11.2.0</cassandraunit.version>
     </properties>
